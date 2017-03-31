@@ -5,6 +5,8 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
+      host: '10.1.1.10',
+      port : 5432,
       database: 'abc_trips_server_development',
       user:     'abc',
       password: 'password'
@@ -13,8 +15,10 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      directory: __dirname + '/migrations'
+    },
+    seeds: {
+      directory: __dirname + '/db/seeds/development'
     }
   }
-
 };
